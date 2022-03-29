@@ -58,13 +58,13 @@ La API cuenta con 3 endpoints definidos, dos de ellos requieren que el usuario e
 
 Para mas documentación sobre la API descargue la colección de postman y su configuración de producción en:
 
-[ API en Producción ](https://api.keepsmiling.renzovinci.com.ar/){:target="_blank"}
+[ API en Producción ](https://api.keepsmiling.renzovinci.com.ar/)
 
 ## Sitio en Producción
 
 Para la presentación se deployeo tanto la API como el FrontEnd en producción para ver el sitio en funcionamiento acceda a través del siguiente vinculo
 
-[ FrontEnd en Producción ](https://keepsmiling.renzovinci.com.ar/){:target="_blank"}
+[ FrontEnd en Producción ](https://keepsmiling.renzovinci.com.ar/){:target="\_blank"}
 
 Si bien se solicitaba cargar una grilla con los datos de una API se agrego la funcionalidad de Login. Es decir, para poder ver el listado de dentistas deberá loguearse con un usuario y una vez logueado se mantendrá en sesión sus datos y podrá ver la grilla de dentistas pudiendo aplicar filtros. Para salir deberá tocar el boton salir.
 
