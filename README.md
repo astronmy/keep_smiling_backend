@@ -81,7 +81,7 @@ PASS = keepsmiling
 El repo con la implentación del lado del FrontEnd se encuentra en:
 
 
-[ FrontEnd Repo ](https://github.com/astronmy/keep_smiling_front){:target="_blank"}
+[ FrontEnd Repo ](https://github.com/astronmy/keep_smiling_front)
 
 
 
