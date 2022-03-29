@@ -1,0 +1,640 @@
+{
+	"info": {
+		"_postman_id": "b0c59b16-5d44-432c-90a2-7fd4ccf7f8ad",
+		"name": "KeepSmiling",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"{{user_api}}\",\n    \"password\" : \"{{user_password_api}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}login",
+					"host": [
+						"{{base_url}}login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400 Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{user_api}}\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}login",
+							"host": [
+								"{{base_url}}login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 10:58:41 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 10:58:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 10,\n    \"message\": \"Unauthorized\"\n}"
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"{{user_api}}\",\n    \"password\" : \"{{user_password_api}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}login",
+							"host": [
+								"{{base_url}}login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:00:52 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:00:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 0,\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmQxNmMyOWMwNGQzOWQ2ZTRiMjVjNDE2OWFiZTkwZTY1MDA1Njc2YzIwYmE5MmFiNTk3YmUwMmVjYWQzOGY4YTJhMTllNmU2YTY4MDgwMzYiLCJpYXQiOjE2NDg0NjUyNTIuMzc1MDg3LCJuYmYiOjE2NDg0NjUyNTIuMzc1MDkxLCJleHAiOjE2ODAwMDEyNTIuMzY5NTQ3LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.WY26Pa8gcANUzWGt5i3dkYylYIGzaR0M_YJSBiEUX4EVx4M-1IJzEzCi4YrSgZ_-wCw2vy6jrQj36k45NUKTLDgHjdMcMJOiRvWf_MRr5_XrWENUsoJtoe2jY7wy2NvB-L_e-_V-iq_wCcJXFFtdkwRApI9Eopd5l48zTUIOLnaBrE5rd0E2qAnyxGjug848za7cypCk-2JjG-qvqR8TO8lVfGWTlv8f8z-gReIu2bTsQbrIeMnS-whzXQsGQEL3WSRzVKzYAI0nkY85ny0KF2QfuzdvYKaVyFt4AEBmuB2Z9WmPutVftLC6qWx3cYa3bMtjzqt9hDiEwHK6Cfuj9rRxrQpHZZ3IIjwNj7nMHHynGPeGWvMotiSVb-OxA-lakIIDQi3_TyhSw43b6fCoqYwc4GdwUzDKO7zMwjxS2Ad2C9HawOW0skKCE6_k9CtCIk8ujKxbo04npPYlshWRHcZIIcRjsnyq5zGmgyhHeoYY0qUQ_St7Egj-ouzQj4Fl1J0N0m3V1kJDhOKDOk6ylTPRRnI_RUc22mihQuFBjeXatShVw-UQLPvhI7xk4FnWT5kO1g3TkxDvP2T8qW-wwSffquX1RhGLUzJNI7aIb9lzIcwPDLlTCrjGTt0e1x911mOkNDsU7a5q65EUD-fzFJwfE11_3GcPPrmL-sxsIv0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "dentists",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}dentists",
+					"host": [
+						"{{base_url}}dentists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Ash",
+							"disabled": true
+						},
+						{
+							"key": "surname",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "created",
+							"value": null,
+							"description": "YYYY-m-d",
+							"disabled": true
+						},
+						{
+							"key": "country",
+							"value": null,
+							"description": "ID from country",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK empty",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}dentists",
+							"host": [
+								"{{base_url}}dentists"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:08:13 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:08:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 0,\n    \"data\": []\n}"
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}dentists",
+							"host": [
+								"{{base_url}}dentists"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:21:50 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:21:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 0,\n    \"data\": [\n        {\n            \"name\": \"Vinnie Hackett\",\n            \"surname\": \"Russel\",\n            \"gender\": \"non binary\",\n            \"email\": \"lbernhard@example.org\",\n            \"country name\": \"Germany\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Ashlee Konopelski\",\n            \"surname\": \"Rogahn\",\n            \"gender\": \"non binary\",\n            \"email\": \"hazle89@example.net\",\n            \"country name\": \"Nigeria\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Jorge Kunde IV\",\n            \"surname\": \"Bayer\",\n            \"gender\": \"non binary\",\n            \"email\": \"hzemlak@example.com\",\n            \"country name\": \"Slovenia\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Mr. Lane Waelchi III\",\n            \"surname\": \"Bernier\",\n            \"gender\": \"non binary\",\n            \"email\": \"regan73@example.com\",\n            \"country name\": \"Czech Republic\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Dr. Kelsi Buckridge\",\n            \"surname\": \"Koelpin\",\n            \"gender\": \"female\",\n            \"email\": \"colby.marks@example.org\",\n            \"country name\": \"Vietnam\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Miss Sincere Daugherty V\",\n            \"surname\": \"Weissnat\",\n            \"gender\": \"female\",\n            \"email\": \"blanda.dandre@example.com\",\n            \"country name\": \"Gambia\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Prof. Diana Auer\",\n            \"surname\": \"Schroeder\",\n            \"gender\": \"non binary\",\n            \"email\": \"gzemlak@example.net\",\n            \"country name\": \"Finland\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Lucienne Thiel V\",\n            \"surname\": \"Wolf\",\n            \"gender\": \"female\",\n            \"email\": \"ekrajcik@example.com\",\n            \"country name\": \"India\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Brody Ledner\",\n            \"surname\": \"Reichel\",\n            \"gender\": \"male\",\n            \"email\": \"brendan06@example.com\",\n            \"country name\": \"Pitcairn Islands\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Mohamed Yundt\",\n            \"surname\": \"Padberg\",\n            \"gender\": \"female\",\n            \"email\": \"nola29@example.org\",\n            \"country name\": \"Saudi Arabia\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Jodie Grant III\",\n            \"surname\": \"Armstrong\",\n            \"gender\": \"male\",\n            \"email\": \"qcronin@example.net\",\n            \"country name\": \"France\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Mr. Ali Hickle V\",\n            \"surname\": \"Corwin\",\n            \"gender\": \"female\",\n            \"email\": \"kennedy.bosco@example.net\",\n            \"country name\": \"Canada\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Ms. Tressa Bauch\",\n            \"surname\": \"Greenholt\",\n            \"gender\": \"non binary\",\n            \"email\": \"romaguera.zaria@example.net\",\n            \"country name\": \"Sri Lanka\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Hildegard Hauck\",\n            \"surname\": \"Konopelski\",\n            \"gender\": \"male\",\n            \"email\": \"obuckridge@example.org\",\n            \"country name\": \"Syrian Arab Republic\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Jaclyn Miller Jr.\",\n            \"surname\": \"Bechtelar\",\n            \"gender\": \"female\",\n            \"email\": \"wyatt.aufderhar@example.com\",\n            \"country name\": \"Finland\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Wava Collins I\",\n            \"surname\": \"Schamberger\",\n            \"gender\": \"male\",\n            \"email\": \"rickey.effertz@example.org\",\n            \"country name\": \"United States Virgin Islands\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Mr. Webster Schmitt\",\n            \"surname\": \"Jaskolski\",\n            \"gender\": \"non binary\",\n            \"email\": \"ufriesen@example.com\",\n            \"country name\": \"Argentina\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Verona Daniel\",\n            \"surname\": \"Wisoky\",\n            \"gender\": \"non binary\",\n            \"email\": \"steuber.patricia@example.net\",\n            \"country name\": \"Singapore\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Katelynn Bernhard\",\n            \"surname\": \"Bahringer\",\n            \"gender\": \"male\",\n            \"email\": \"leone.baumbach@example.com\",\n            \"country name\": \"Kiribati\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Weldon Wyman\",\n            \"surname\": \"Towne\",\n            \"gender\": \"male\",\n            \"email\": \"aglae.stracke@example.net\",\n            \"country name\": \"Austria\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "200 OK with filter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}dentists?name=Ash",
+							"host": [
+								"{{base_url}}dentists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Ash"
+								},
+								{
+									"key": "surname",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": null,
+									"description": "ID from country",
+									"disabled": true
+								},
+								{
+									"key": "created",
+									"value": null,
+									"description": "YYYY-m-d",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 12:26:46 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 12:26:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 0,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Ashlee Konopelski\",\n            \"surname\": \"Rogahn\",\n            \"gender\": \"non binary\",\n            \"email\": \"hazle89@example.net\",\n            \"country_id\": 11,\n            \"country_name\": \"Nigeria\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "countries",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}countries",
+					"host": [
+						"{{base_url}}countries"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK empty",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}dentists",
+							"host": [
+								"{{base_url}}dentists"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:08:13 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:08:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 0,\n    \"data\": []\n}"
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}dentists",
+							"host": [
+								"{{base_url}}dentists"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:21:50 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Mar 2022 11:21:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 0,\n    \"data\": [\n        {\n            \"name\": \"Vinnie Hackett\",\n            \"surname\": \"Russel\",\n            \"gender\": \"non binary\",\n            \"email\": \"lbernhard@example.org\",\n            \"country name\": \"Germany\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Ashlee Konopelski\",\n            \"surname\": \"Rogahn\",\n            \"gender\": \"non binary\",\n            \"email\": \"hazle89@example.net\",\n            \"country name\": \"Nigeria\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Jorge Kunde IV\",\n            \"surname\": \"Bayer\",\n            \"gender\": \"non binary\",\n            \"email\": \"hzemlak@example.com\",\n            \"country name\": \"Slovenia\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Mr. Lane Waelchi III\",\n            \"surname\": \"Bernier\",\n            \"gender\": \"non binary\",\n            \"email\": \"regan73@example.com\",\n            \"country name\": \"Czech Republic\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Dr. Kelsi Buckridge\",\n            \"surname\": \"Koelpin\",\n            \"gender\": \"female\",\n            \"email\": \"colby.marks@example.org\",\n            \"country name\": \"Vietnam\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Miss Sincere Daugherty V\",\n            \"surname\": \"Weissnat\",\n            \"gender\": \"female\",\n            \"email\": \"blanda.dandre@example.com\",\n            \"country name\": \"Gambia\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Prof. Diana Auer\",\n            \"surname\": \"Schroeder\",\n            \"gender\": \"non binary\",\n            \"email\": \"gzemlak@example.net\",\n            \"country name\": \"Finland\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Lucienne Thiel V\",\n            \"surname\": \"Wolf\",\n            \"gender\": \"female\",\n            \"email\": \"ekrajcik@example.com\",\n            \"country name\": \"India\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Brody Ledner\",\n            \"surname\": \"Reichel\",\n            \"gender\": \"male\",\n            \"email\": \"brendan06@example.com\",\n            \"country name\": \"Pitcairn Islands\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Mohamed Yundt\",\n            \"surname\": \"Padberg\",\n            \"gender\": \"female\",\n            \"email\": \"nola29@example.org\",\n            \"country name\": \"Saudi Arabia\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Jodie Grant III\",\n            \"surname\": \"Armstrong\",\n            \"gender\": \"male\",\n            \"email\": \"qcronin@example.net\",\n            \"country name\": \"France\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Mr. Ali Hickle V\",\n            \"surname\": \"Corwin\",\n            \"gender\": \"female\",\n            \"email\": \"kennedy.bosco@example.net\",\n            \"country name\": \"Canada\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Ms. Tressa Bauch\",\n            \"surname\": \"Greenholt\",\n            \"gender\": \"non binary\",\n            \"email\": \"romaguera.zaria@example.net\",\n            \"country name\": \"Sri Lanka\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Hildegard Hauck\",\n            \"surname\": \"Konopelski\",\n            \"gender\": \"male\",\n            \"email\": \"obuckridge@example.org\",\n            \"country name\": \"Syrian Arab Republic\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Jaclyn Miller Jr.\",\n            \"surname\": \"Bechtelar\",\n            \"gender\": \"female\",\n            \"email\": \"wyatt.aufderhar@example.com\",\n            \"country name\": \"Finland\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Wava Collins I\",\n            \"surname\": \"Schamberger\",\n            \"gender\": \"male\",\n            \"email\": \"rickey.effertz@example.org\",\n            \"country name\": \"United States Virgin Islands\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Mr. Webster Schmitt\",\n            \"surname\": \"Jaskolski\",\n            \"gender\": \"non binary\",\n            \"email\": \"ufriesen@example.com\",\n            \"country name\": \"Argentina\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Verona Daniel\",\n            \"surname\": \"Wisoky\",\n            \"gender\": \"non binary\",\n            \"email\": \"steuber.patricia@example.net\",\n            \"country name\": \"Singapore\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Katelynn Bernhard\",\n            \"surname\": \"Bahringer\",\n            \"gender\": \"male\",\n            \"email\": \"leone.baumbach@example.com\",\n            \"country name\": \"Kiribati\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        },\n        {\n            \"name\": \"Weldon Wyman\",\n            \"surname\": \"Towne\",\n            \"gender\": \"male\",\n            \"email\": \"aglae.stracke@example.net\",\n            \"country name\": \"Austria\",\n            \"created_at\": \"2022-03-28T11:19:28.000000Z\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}countries",
+							"host": [
+								"{{base_url}}countries"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 12:26:11 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 12:26:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.26"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": 0,\n    \"data\": [\n        {\n            \"id\": 37,\n            \"name\": \"Algeria\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 77,\n            \"name\": \"Anguilla\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 54,\n            \"name\": \"Antarctica (the territory South of 60 deg S)\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Argentina\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 43,\n            \"name\": \"Argentina\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 76,\n            \"name\": \"Armenia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"Aruba\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 83,\n            \"name\": \"Australia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 84,\n            \"name\": \"Austria\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Bangladesh\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 64,\n            \"name\": \"Belarus\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 93,\n            \"name\": \"Belgium\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 86,\n            \"name\": \"Benin\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Botswana\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 44,\n            \"name\": \"Botswana\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 94,\n            \"name\": \"British Indian Ocean Territory (Chagos Archipelago)\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 57,\n            \"name\": \"Cambodia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 88,\n            \"name\": \"Cambodia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 36,\n            \"name\": \"Cameroon\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 48,\n            \"name\": \"Canada\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 45,\n            \"name\": \"Central African Republic\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"Colombia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 69,\n            \"name\": \"Czech Republic\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Dominica\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 66,\n            \"name\": \"El Salvador\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 71,\n            \"name\": \"Equatorial Guinea\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 52,\n            \"name\": \"Falkland Islands (Malvinas)\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Finland\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 49,\n            \"name\": \"Finland\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"France\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"France\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 51,\n            \"name\": \"France\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Gambia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Georgia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 73,\n            \"name\": \"Germany\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 92,\n            \"name\": \"Ghana\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 81,\n            \"name\": \"Guam\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Guatemala\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 38,\n            \"name\": \"Guatemala\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 40,\n            \"name\": \"Guernsey\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Heard Island and McDonald Islands\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 91,\n            \"name\": \"Honduras\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 75,\n            \"name\": \"Iceland\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 79,\n            \"name\": \"India\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 58,\n            \"name\": \"Isle of Man\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 31,\n            \"name\": \"Italy\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 33,\n            \"name\": \"Jamaica\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 95,\n            \"name\": \"Jamaica\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"Jordan\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 70,\n            \"name\": \"Jordan\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 47,\n            \"name\": \"Kiribati\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Kyrgyz Republic\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 65,\n            \"name\": \"Lao People's Democratic Republic\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Lesotho\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 62,\n            \"name\": \"Liechtenstein\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Macedonia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Malawi\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 41,\n            \"name\": \"Mauritius\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Mexico\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 98,\n            \"name\": \"Moldova\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"Mongolia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 82,\n            \"name\": \"Mozambique\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 46,\n            \"name\": \"Namibia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 96,\n            \"name\": \"Netherlands Antilles\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 63,\n            \"name\": \"New Zealand\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Nigeria\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 80,\n            \"name\": \"Nigeria\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 89,\n            \"name\": \"Niue\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 85,\n            \"name\": \"Oman\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 72,\n            \"name\": \"Palestinian Territories\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 55,\n            \"name\": \"Panama\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"Papua New Guinea\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 100,\n            \"name\": \"Peru\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 32,\n            \"name\": \"Philippines\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 42,\n            \"name\": \"Pitcairn Islands\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 53,\n            \"name\": \"Portugal\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 74,\n            \"name\": \"Puerto Rico\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 39,\n            \"name\": \"Saudi Arabia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 56,\n            \"name\": \"Sierra Leone\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 67,\n            \"name\": \"Singapore\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 68,\n            \"name\": \"Singapore\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Slovenia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 59,\n            \"name\": \"Slovenia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 61,\n            \"name\": \"Slovenia\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Spain\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Sri Lanka\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 35,\n            \"name\": \"Sri Lanka\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"Sudan\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 87,\n            \"name\": \"Suriname\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 90,\n            \"name\": \"Suriname\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 97,\n            \"name\": \"Suriname\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 34,\n            \"name\": \"Svalbard & Jan Mayen Islands\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 78,\n            \"name\": \"Swaziland\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 60,\n            \"name\": \"Syrian Arab Republic\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Tajikistan\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Tokelau\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 99,\n            \"name\": \"United States Virgin Islands\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 50,\n            \"name\": \"Uruguay\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Uzbekistan\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Vietnam\",\n            \"created_at\": \"2022-03-28 11:19:28\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
