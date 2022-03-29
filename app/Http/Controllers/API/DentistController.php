@@ -23,10 +23,10 @@ class DentistController extends APIController
             ->join('countries', 'countries.id', 'dentists.country_id');
         
         if ($request->has("name") && $request->get("name")) {
-            $query->where("dentists.name", "LIKE", $request->get("name")."%");
+            $query->where("dentists.name", "LIKE", '%'.$request->get("name")."%");
         }
         if ($request->has("surname") && $request->get("surname")) {
-            $query->where("dentists.surname", "LIKE", $request->get("surname")."%");
+            $query->where("dentists.surname", "LIKE", '%'. $request->get("surname")."%");
         }
         if ($request->has("country") && $request->get("country")) {
             $query->where("dentists.country_id", $request->get("country"));
