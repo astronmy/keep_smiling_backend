@@ -38,8 +38,8 @@
                             </div>
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    <a href="postman/KeepSmiling.postman_collection.json" target="_blank"> Collección Postman</a> <br>
-                                    <a href="postman/KeepSmiling PROD.postman_environment.json" target="_blank"> Postman Environment </a> <br>
+                                    <a href="postman/KeepSmiling.postman_collection.json" target="_blank" download> Collección Postman</a> <br>
+                                    <a href="postman/KeepSmiling PROD.postman_environment.json" target="_blank" download> Postman Environment </a> <br>
                                 </div>
                             </div>
                         </div>
