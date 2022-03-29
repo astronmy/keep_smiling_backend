@@ -33,9 +33,10 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    La presente API esta desarrollada utilizando Laravel Passport con Personal Access Token. Es una API sencilla que cuenta con un login por usuario y luego dos endpoints. A continuación podrá descargar 
-                                    la collección de POSTMAN para probar
+                                    La presente API esta desarrollada utilizando Laravel Passport con Personal Access Token. Es una API sencilla que cuenta con un login por usuario y luego dos endpoints. A continuación podrá descargar la collección de POSTMAN para probar
                                 </div>
+                            </div>
+                            <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     <a href="postman/KeepSmiling.postman_collection.json" target="_blank"> Collección Postman</a> <br>
                                     <a href="postman/KeepSmiling PROD.postman_environment.json" target="_blank"> Postman Environment </a> <br>
