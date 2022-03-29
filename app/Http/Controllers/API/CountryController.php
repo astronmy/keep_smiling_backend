@@ -10,7 +10,7 @@ class CountryController extends APIController
 {
     public function list(Request $request)
     {
-        $result = Country::all();
+        $result = Country::orderBy("name", "asc")->get();
         $success['data'] = $result;
         return $this->response($success);
     }
